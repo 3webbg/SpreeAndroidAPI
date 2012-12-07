@@ -11,6 +11,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 import org.hardartcore.utils.Consts;
 import org.hardartcore.utils.IOUtils;
+import org.hardartcore.utils.SpreeLog;
 
 public class Connector {
 
@@ -53,7 +54,8 @@ public class Connector {
 	}
 
 	public enum ResponseType {
-		_httpOK(200), _notFound(404);
+		_httpOK(200), 
+		_notFound(404);
 
 		private int value;
 
@@ -76,11 +78,11 @@ public class Connector {
 	/**
 	 * This function is used for connections the server with url<br />
 	 * <b>THIS FUNCTION MUST RUN IN SEPARATE THREAD OR IT MAY CAUSE NetworkOnMainThreadException</b><br />
-	 * <i>For SSL connection {@link requestServerUsingSSL} .</i>
+	 * <i>For SSL connection requestServerUsingSSL .</i>
 	 * @param url
 	 * @return response from server.
 	 */
-	public String requestServer(final String url) {
+	public String requestServer(String url, String apiKey) {
 
 		String charset = "UTF-8";
 		InputStream response = null;
@@ -102,7 +104,8 @@ public class Connector {
 			e.printStackTrace();
 		}
 		connection.setRequestProperty("Charset", charset);
-
+		//TODO: SET APIKEY AS COOKIE HERE
+		
 		if (connection != null) {
 			int status = 0;
 			try {
@@ -140,7 +143,7 @@ public class Connector {
 	 * @param url
 	 * @return
 	 */
-	public String requestServerUsingSSL(final String url) {
+	public String requestServerUsingSSL(String url, String apiKey) {
 
 		String charset = "UTF-8";
 		InputStream response = null;
@@ -162,7 +165,9 @@ public class Connector {
 			e.printStackTrace();
 		}
 		connection.setRequestProperty("Charset", charset);
-
+		//TODO: SET APIKEY AS COOKIE HERE
+		
+		
 		if (connection != null) {
 			int status = 0;
 			try {

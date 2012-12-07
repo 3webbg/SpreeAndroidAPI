@@ -1,4 +1,5 @@
-int drawable ic_launcher 0x7f020000
+int drawable ic_default_product 0x7f020000
+int drawable ic_launcher 0x7f020001
 int id menu_settings 0x7f070000
 int layout activity_spree 0x7f030000
 int menu activity_spree 0x7f060000

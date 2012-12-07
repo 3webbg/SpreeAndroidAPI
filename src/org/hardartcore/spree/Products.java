@@ -9,7 +9,6 @@ public class Products {
 		
 		if(products == null)
 			products = new ArrayList<Product>();
-		
 		products.add(object);
 		
 	}

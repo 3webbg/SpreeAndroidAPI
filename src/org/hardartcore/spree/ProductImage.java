@@ -9,7 +9,7 @@ public class ProductImage {
 	private String path;
 	private Drawable image;
 	private Drawable thumbnail;
-	private final int _defaultLogo = R.drawable.ic_launcher; // default Logo
+	private final int _defaultLogo = R.drawable.ic_default_product; // default Logo
 	
 	public ProductImage(String path) {
 		this.path = path;

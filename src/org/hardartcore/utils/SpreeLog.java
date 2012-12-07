@@ -1,4 +1,4 @@
-package org.hardartcore.spree;
+package org.hardartcore.utils;
 
 import android.util.Log;
 

@@ -9,7 +9,6 @@ public class Product {
 		
 		if(variants == null)
 			variants = new ArrayList<Variant>();
-		
 		variants.add(object);
 
 	}
